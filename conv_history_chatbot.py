@@ -9,9 +9,6 @@ from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables import RunnableLambda
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
-# ----------------------------
-# Load API Key
-# ----------------------------
 load_dotenv()
 
 llm = ChatGroq(
@@ -19,9 +16,6 @@ llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY")
 )
 
-# ----------------------------
-# Prompt
-# ----------------------------
 prompt = ChatPromptTemplate.from_messages(
     [
         (
@@ -36,9 +30,6 @@ prompt = ChatPromptTemplate.from_messages(
 
 chain = prompt | llm
 
-# ----------------------------
-# Memory Store
-# ----------------------------
 if "store" not in st.session_state:
     st.session_state.store = {}
 
@@ -56,9 +47,6 @@ chatbot = RunnableWithMessageHistory(
     history_messages_key="history",
 )
 
-# ----------------------------
-# UI
-# ----------------------------
 st.set_page_config(page_title="Memory Bot")
 
 st.title("🤖 Memory Enabled Chatbot")
@@ -119,9 +107,6 @@ if user:
     with st.chat_message("assistant"):
         st.markdown(answer)
 
-# ----------------------------
-# Debug
-# ----------------------------
 history = get_history(session_id)
 
 st.sidebar.divider()
