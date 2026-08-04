@@ -6,7 +6,7 @@ A conversational AI chatbot built using **Python, LangChain, Groq (Llama 3.1), a
 
 ## 🎥 Demo
 
-![Memory Enabled Chatbot Demo](assets/demo.gif)
+![Memory Enabled Chatbot Demo](assets/chatbot.gif)
 
 ---
 
