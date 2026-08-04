@@ -97,7 +97,7 @@ Make sure to keep your API key private and never upload it to GitHub.
 Start the Streamlit application:
 
 ```bash
-streamlit run app.py
+streamlit run conv_history_chatbot.py
 ```
 
 The application will open in your browser.
